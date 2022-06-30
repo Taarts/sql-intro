@@ -1,0 +1,115 @@
+INSERT INTO "Employees"("FullName", "Salary", "JobPosition", "PhoneExtension", "IsPartTime") VALUES ('Angela
+............................. Landsbury', 50000, 'Detective', 190, TRUE), ('Jennifer Lopez', 1000000, 'Dead singer impersonator', 191, TR
+............................. UE), ('John Oliver', 10, 'Sarcasm', 192, TRUE), ('Marianne Faithful', 10, 'Hobo on a wall', 193, TRUE), ('Ru
+............................. th Bader Ginsburg', 80000000, 'Being right', 194, TRUE), ('Mary Stuart', 1000000, 'Queen of Scotland', 195,
+............................. TRUE), ('Mabel Rayworth', 20000, 'cook', 196, FALSE), ('Mark Hardy', 20000, 'Manager', 200, FALSE), ('Jeremy
+............................. Renner', 0, 'Hawk eye', 201, True), ('Martin T Parting', 50000, 'cook', 202, FALSE);
+INSERT 0 10
+Time: 0.045s
+tricia1@/tmp:CompanyDatabase> SELECT \* FROM "Employees"
+............................. ;
++---------------------+----------+--------------------------+----------------+------------+
+| FullName | Salary | JobPosition | PhoneExtension | IsPartTime |
+|---------------------+----------+--------------------------+----------------+------------|
+| Angela Landsbury | 50000 | Detective | 190 | True |
+| Jennifer Lopez | 1000000 | Dead singer impersonator | 191 | True |
+| John Oliver | 10 | Sarcasm | 192 | True |
+| Marianne Faithful | 10 | Hobo on a wall | 193 | True |
+| Ruth Bader Ginsburg | 80000000 | Being right | 194 | True |
+| Mary Stuart | 1000000 | Queen of Scotland | 195 | True |
+| Mabel Rayworth | 20000 | cook | 196 | False |
+| Mark Hardy | 20000 | Manager | 200 | False |
+| Jeremy Renner | 0 | Hawk eye | 201 | True |
+| Martin T Parting | 50000 | cook | 202 | False |
++---------------------+----------+--------------------------+----------------+------------+
+SELECT 10
+Time: 0.010s
+tricia1@/tmp:CompanyDatabase> SELECT "FullName", "PhoneExtension" FROM "Employees" WHERE "IsPartTime" = TRUE
+............................. ;
++---------------------+----------------+
+| FullName | PhoneExtension |
+|---------------------+----------------|
+| Angela Landsbury | 190 |
+| Jennifer Lopez | 191 |
+| John Oliver | 192 |
+| Marianne Faithful | 193 |
+| Ruth Bader Ginsburg | 194 |
+| Mary Stuart | 195 |
+| Jeremy Renner | 201 |
++---------------------+----------------+
+SELECT 7
+Time: 0.005s
+tricia1@/tmp:CompanyDatabase> INSERT INTO Employees ( FullName, Salary, JobPosition, PhoneExtension, IsPartTime )
+............................. VALUES ('Malcolm Gladwell', 450, 'software developer', 197, TRUE);
+relation "employees" does not exist
+LINE 1: INSERT INTO Employees ( FullName, Salary, JobPosition, Phone...
+^
+
+Time: 0.041s
+tricia1@/tmp:CompanyDatabase> INSERT INTO "Employees" ( "FullName", "Salary", "JobPosition", "PhoneExtension", "IsPartTime" )
+............................. VALUES ('Malcolm Gladwell', 450, 'software developer', 197, TRUE);
+INSERT 0 1
+Time: 0.041s
+tricia1@/tmp:CompanyDatabase> UPDATE "Employees" SET "Salary" = '500' WHERE "JobPosition" = 'cook';
+You're about to run a destructive command.
+Do you want to proceed? (y/n): y
+Your call!
+UPDATE 2
+Time: 0.047s
+tricia1@/tmp:CompanyDatabase> INSERT INTO "Employees" ( "FullName", "Salary", "JobPosition", "PhoneExtension", "IsPartTime" )
+............................. VALUES ('Lazy larry', 180, 'Machinist', 197, FALSE);
+INSERT 0 1
+Time: 0.042s
+tricia1@/tmp:CompanyDatabase> DELETE FROM "Employees" WHERE "FullName" = 'Lazy Larry';
+You're about to run a destructive command.
+Do you want to proceed? (y/n): n
+Wise choice!
+cancelled query
+tricia1@/tmp:CompanyDatabase> SELECT _
+............................. FROM "Employees"
+............................. ;
++---------------------+----------+--------------------------+----------------+------------+
+| FullName | Salary | JobPosition | PhoneExtension | IsPartTime |
+|---------------------+----------+--------------------------+----------------+------------|
+| Angela Landsbury | 50000 | Detective | 190 | True |
+| Jennifer Lopez | 1000000 | Dead singer impersonator | 191 | True |
+| John Oliver | 10 | Sarcasm | 192 | True |
+| Marianne Faithful | 10 | Hobo on a wall | 193 | True |
+| Ruth Bader Ginsburg | 80000000 | Being right | 194 | True |
+| Mary Stuart | 1000000 | Queen of Scotland | 195 | True |
+| Mark Hardy | 20000 | Manager | 200 | False |
+| Jeremy Renner | 0 | Hawk eye | 201 | True |
+| Malcolm Gladwell | 450 | software developer | 197 | True |
+| Mabel Rayworth | 500 | cook | 196 | False |
+| Martin T Parting | 500 | cook | 202 | False |
+| Lazy larry | 180 | Machinist | 197 | False |
++---------------------+----------+--------------------------+----------------+------------+
+SELECT 12
+Time: 0.006s
+tricia1@/tmp:CompanyDatabase> DELETE FROM "Employees" WHERE "FullName" = 'Lazy Larry';
+You're about to run a destructive command.
+Do you want to proceed? (y/n): Y
+Your call!
+DELETE 0
+Time: 0.001s
+tricia1@/tmp:CompanyDatabase> SELECT _ FROM "Employees";
++---------------------+----------+--------------------------+----------------+------------+
+| FullName | Salary | JobPosition | PhoneExtension | IsPartTime |
+|---------------------+----------+--------------------------+----------------+------------|
+| Angela Landsbury | 50000 | Detective | 190 | True |
+| Jennifer Lopez | 1000000 | Dead singer impersonator | 191 | True |
+| John Oliver | 10 | Sarcasm | 192 | True |
+| Marianne Faithful | 10 | Hobo on a wall | 193 | True |
+| Ruth Bader Ginsburg | 80000000 | Being right | 194 | True |
+| Mary Stuart | 1000000 | Queen of Scotland | 195 | True |
+| Mark Hardy | 20000 | Manager | 200 | False |
+| Jeremy Renner | 0 | Hawk eye | 201 | True |
+| Malcolm Gladwell | 450 | software developer | 197 | True |
+| Mabel Rayworth | 500 | cook | 196 | False |
+| Martin T Parting | 500 | cook | 202 | False |
+| Lazy larry | 180 | Machinist | 197 | False |
++---------------------+----------+--------------------------+----------------+------------+
+SELECT 12
+Time: 0.006s
+tricia1@/tmp:CompanyDatabase>
+tricia1@/tmp:CompanyDatabase>
