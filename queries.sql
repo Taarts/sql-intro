@@ -44,7 +44,7 @@ ALTER TABLE "Employees" ADD COLUMN "DepartmentId" INTEGER NULL REFERENCES "Depar
 
 CREATE TABLE "Products" (
   "Id" SERIAL PRIMARY KEY,
-  "Price"  DECIMAL(2),
+  "Price"  NUMERIC (5,2),
   "Name" TEXT,
   "Description" TEXT,
   "QuantityInStock" INT
