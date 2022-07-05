@@ -30,3 +30,14 @@ DELETE FROM "Employees" WHERE "FullName" = 'Lazy Larry';
 SELECT * FROM "Employees";
 
 ALTER TABLE "Employees" ADD COLUMN "ParkingSpot" INT;
+
+_______________________________________________________________________________________
+/*-- SQL joins --*/
+
+CREATE TABLE "Departments" (
+  "Id" SERIAL PRIMARY KEY,
+  "Departments" TEXT,
+  "Building" TEXT
+);
+
+ALTER TABLE "Employees" ADD COLUMN "DepartmentId" INTEGER NULL REFERENCES "Departments" ("Id");
