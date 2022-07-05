@@ -56,4 +56,10 @@ CREATE TABLE "Products" (
   "DatePlaced" DATE,
   "Email" TEXT
   );
+
+  CREATE TABLE "ProductOrders"(
+  "Id" SERIAL PRIMARY KEY,
+  "OrderQuantity" INT
+  );
+
   
