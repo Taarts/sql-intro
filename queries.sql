@@ -62,4 +62,8 @@ CREATE TABLE "Products" (
   "OrderQuantity" INT
   );
 
-  
+INSERT INTO "Departments" ("Departments", "Building")
+VALUES ('Development', 'Main');
+
+INSERT INTO "Departments" ("Departments", "Building")
+VALUES ('Marketing', 'North');
