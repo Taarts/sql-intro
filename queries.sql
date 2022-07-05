@@ -50,4 +50,10 @@ CREATE TABLE "Products" (
   "QuantityInStock" INT
   );
 
+  CREATE TABLE "Orders"(
+  "Id" SERIAL PRIMARY KEY,
+  "OrderNumber" TEXT,
+  "DatePlaced" DATE,
+  "Email" TEXT
+  );
   
