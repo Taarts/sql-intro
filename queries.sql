@@ -14,7 +14,7 @@ SELECT * FROM "Employees"
 SELECT "FullName", "PhoneExtension" FROM "Employees" WHERE "IsPartTime" = TRUE
 
 INSERT INTO "Employees" ( "FullName", "Salary", "JobPosition", "PhoneExtension", "IsPartTime" )
-.............................        VALUES ('Malcolm Gladwell', 450, 'software developer', 197, TRUE);
+VALUES ('Malcolm Gladwell', 450, 'software developer', 197, TRUE);
 
 UPDATE "Employees" SET "Salary" = '500' WHERE "JobPosition" = 'cook';
 
@@ -28,3 +28,5 @@ SELECT * FROM "Employees";
 DELETE FROM "Employees" WHERE "FullName" = 'Lazy Larry';
 
 SELECT * FROM "Employees";
+
+ALTER TABLE "Employees" ADD COLUMN "ParkingSpot" INT;
