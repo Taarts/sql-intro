@@ -122,3 +122,17 @@ FROM "Products"
 JOIN "ProductOrders" on "ProductOrders"."ProductId" = "Products"."Id"
 JOIN "Orders" ON "Orders"."Id" = "ProductOrders"."OrderId"
 WHERE "ProductId" = '2';
+
+/*-- Find the quantity of the Flowbee product from order with order number X529. You may not write the value of an Id in your query, let SQL do the work (HINT: JOIN) --*/
+
+SELECT  "Orders"."OrderNumber", "Products"."Name", "ProductOrders"."OrderQuantity"
+FROM "Products"
+JOIN "ProductOrders" on "ProductOrders"."ProductId" = "Products"."Id"
+JOIN "Orders" ON "Orders"."Id" = "ProductOrders"."OrderId"
+WHERE "ProductId" = '2'; /*-- <-- is wrong, but works! --*/
+
+SELECT  "Orders"."OrderNumber", "Products"."Name", "ProductOrders"."OrderQuantity"
+FROM "Products"
+JOIN "ProductOrders" on "ProductOrders"."ProductId" = "Products"."Id"
+JOIN "Orders" ON "Orders"."Id" = "ProductOrders"."OrderId"
+WHERE "Name" = 'Flowbee'; /*-- as requested in the task --*/
