@@ -75,3 +75,6 @@ VALUES ('Barbara Ramsey', '80000', 'Manager', 234, FALSE, 1);
 
 INSERT INTO "Employees" ("FullName", "Salary", "JobPosition", "PhoneExtension", "IsPartTime", "DepartmentId")
 VALUES ('Tom Jones', 32000, 'Admin', 456, TRUE, 2);
+
+INSERT INTO "Orders" ("OrderNumber", "DatePlaced", "Email")
+VALUES ('X529', '2020-01-01 16:55', 'person@example.com');
