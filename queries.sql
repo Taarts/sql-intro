@@ -85,4 +85,11 @@ Create table "ProductOrders" (
 "ProductId" INTEGER REFERENCES "Products" ("Id"),
 "OrderQuantity" INT
   );
-  
+
+/*- Add an order quantity of 'x' for the product named "y" to the order X529 -*/
+INSERT INTO "ProductOrders" ("OrderId", "ProductId", "OrderQuantity")
+VALUES (1, 1, 3);
+
+INSERT INTO "ProductOrders" ("OrderId", "ProductId", "OrderQuantity")
+VALUES (1, 2, 2);
+
