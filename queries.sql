@@ -93,3 +93,5 @@ VALUES (1, 1, 3);
 INSERT INTO "ProductOrders" ("OrderId", "ProductId", "OrderQuantity")
 VALUES (1, 2, 2);
 
+/*-- Given a building, return all employees that work in that building. --*/
+SELECT "FullName" FROM "Employees" WHERE "DepartmentId" = (1);
