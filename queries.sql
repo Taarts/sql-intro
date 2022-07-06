@@ -78,3 +78,11 @@ VALUES ('Tom Jones', 32000, 'Admin', 456, TRUE, 2);
 
 INSERT INTO "Orders" ("OrderNumber", "DatePlaced", "Email")
 VALUES ('X529', '2020-01-01 16:55', 'person@example.com');
+
+Create table "ProductOrders" (
+"Id" SERIAL PRIMARY KEY,
+"OrderId" INTEGER REFERENCES "Orders" ("Id"),
+"ProductId" INTEGER REFERENCES "Products" ("Id"),
+"OrderQuantity" INT
+  );
+  
