@@ -5,9 +5,9 @@ CREATE TABLE "Employees" (
     "Salary" INT,
     "JobPosition" TEXT,
     "PhoneExtension" INT,
-    "IsPartTime" BOOL,
+    "IsPartTime" BOOL
 );
-INSERT INTO "Employees"("FullName", "Salary", "JobPosition", "PhoneExtension", "IsPartTime") VALUES ('Angela Landsbury', 50000, 'Detective', 190, TRUE), ('Jennifer Lopez', 1000000, 'Dead singer impersonator', 191, TRUE), ('John Oliver', 10, 'Sarcasm', 192, TRUE), ('Marianne Faithful', 10, 'Hobo on a wall', 193, TRUE), ('Ruth Bader Ginsburg', 80000000, 'Being right', 194, TRUE), ('Mary Stuart', 1000000, 'Queen of Scotland', 195, TRUE), ('Mabel Rayworth', 20000, 'cook', 196, FALSE), ('Mark Hardy', 20000, 'Manager', 200, FALSE), ('Jeremy Renner', 0, 'Hawk eye', 201, True), ('Martin T Parting', 50000, 'cook', 202, FALSE); 
+INSERT INTO "Employees"("FullName", "Salary", "JobPosition", "PhoneExtension", "IsPartTime") VALUES ('Angela Landsbury', 50000, 'Detective', 190, TRUE), ('Jennifer Lopez', 1000000, 'Dead singer impersonator', 191, TRUE), ('John Oliver', 10, 'Sarcasm', 192, TRUE), ('Marianne Faithful', 10, 'Hobo on a wall', 193, TRUE), ('Ruth Bader Ginsburg', 80000000, 'Being right', 194, TRUE), ('Mary Stuart', 1000000, 'Queen of Scotland', 195, TRUE), ('Mabel Rayworth', 20000, 'cook', 196, FALSE), ('Mark Hardy', 20000, 'Manager', 200, FALSE), ('Jeremy Renner', 0, 'Hawk eye', 201, True), ('Martin T Parting', 50000, 'cook', 202, FALSE), ('Lazy Larry', 180, 'Machinist', 197, TRUE); 
 
 SELECT * FROM "Employees"
 
@@ -36,7 +36,7 @@ ________________________________________________________________________________
 
 CREATE TABLE "Departments" (
   "Id" SERIAL PRIMARY KEY,
-  "Departments" TEXT,
+  "DepartmentName" TEXT,
   "Building" TEXT
 );
 
@@ -94,4 +94,13 @@ INSERT INTO "ProductOrders" ("OrderId", "ProductId", "OrderQuantity")
 VALUES (1, 2, 2);
 
 /*-- Given a building, return all employees that work in that building. --*/
-SELECT "FullName" FROM "Employees" WHERE "DepartmentId" = (1);
+SELECT "FullName" 
+FROM "Employees"
+JOIN "Departments" ON "Employees"."DepartmentId" = "Departments"."Id"
+WHERE "Departments"."Building" = 'Main';
+
+/*-- Created Buildings "North Side" & "East Side" and assigned Employees to them 
+UPDATE "Employees" SET "DepartmentId" = (3) WHERE "FullName" IN ('Ruth Bader Ginsburg', 'John Oliver', 'Mabel Rayworth', 'Mary Stuart');
+UPDATE "Employees" SET "DepartmentId" = (4) WHERE "FullName" IN ('Jeremy Renner', 'Marianne Faithful', 'Jennifer Lopez', 'Martin T Parting'); This was undone-DROP TABLE "Depts" & "Employees": Rebuilt-*/
+
+/*-- Show this query for buildings named North Side, East Side, and finally a building that you actually have in your data --*/
