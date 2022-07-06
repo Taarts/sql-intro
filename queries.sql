@@ -99,8 +99,26 @@ FROM "Employees"
 JOIN "Departments" ON "Employees"."DepartmentId" = "Departments"."Id"
 WHERE "Departments"."Building" = 'Main';
 
+-- result "Tim Smith" & "Barbara Ramsey"
+
 /*-- Created Buildings "North Side" & "East Side" and assigned Employees to them 
 UPDATE "Employees" SET "DepartmentId" = (3) WHERE "FullName" IN ('Ruth Bader Ginsburg', 'John Oliver', 'Mabel Rayworth', 'Mary Stuart');
 UPDATE "Employees" SET "DepartmentId" = (4) WHERE "FullName" IN ('Jeremy Renner', 'Marianne Faithful', 'Jennifer Lopez', 'Martin T Parting'); This was undone-DROP TABLE "Depts" & "Employees": Rebuilt-*/
 
 /*-- Show this query for buildings named North Side, East Side, and finally a building that you actually have in your data --*/
+SELECT "FullName" 
+FROM "Employees"
+JOIN "Departments" ON "Employees"."DepartmentId" = "Departments"."Id"
+WHERE "Departments"."Building" = 'North Side'; /*-- <-- this works for 'East Side' result = "Zero effected"--*/
+
+/*-- Find all orders that contain the product id of 2. --*/
+SELECT *
+FROM "ProductOrders"
+WHERE "ProductId" = '2';
+
+/* -- Returns "OrderNumber" where "ProductId" = '2' --*/
+SELECT  "Orders"."OrderNumber", "Products"."Name"
+FROM "Products"
+JOIN "ProductOrders" on "ProductOrders"."ProductId" = "Products"."Id"
+JOIN "Orders" ON "Orders"."Id" = "ProductOrders"."OrderId"
+WHERE "ProductId" = '2';
